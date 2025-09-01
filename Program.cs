@@ -30,18 +30,27 @@ namespace DSAPlayground
             //Console.WriteLine(BinarySearch.Search(words, "apple"));
             //Console.WriteLine(BinarySearch.Search(words, "donnie"));
 
-            var games = new ArrayStack<Game>();
+            //var games = new ArrayStack<Game>();
+            //games.Push(new Game("GTA V", "Rockstar"));
+            //games.Push(new Game("Metro Exodus", "A4 Games"));
+            //games.Push(new Game("Battlefield 6", "Electronic Arts"));
+            //games.Push(new Game("Red Dead Redemption 2", "Rockstar"));
+
+            //var game = games.Pop();
+            //Console.WriteLine(game.Title + " " + game.Publisher);
+            //game = games.Peek();
+            //Console.WriteLine(game.Title + " " + game.Publisher);
+            //game = games.Pop();
+            //Console.WriteLine(game.Title + " " + game.Publisher);
+
+            var games = new LinkedStack<Game>();
             games.Push(new Game("GTA V", "Rockstar"));
             games.Push(new Game("Metro Exodus", "A4 Games"));
             games.Push(new Game("Battlefield 6", "Electronic Arts"));
             games.Push(new Game("Red Dead Redemption 2", "Rockstar"));
-
-            var game = games.Pop();
-            Console.WriteLine(game.Title + " " + game.Publisher);
-            game = games.Peek();
-            Console.WriteLine(game.Title + " " + game.Publisher);
-            game = games.Pop();
-            Console.WriteLine(game.Title + " " + game.Publisher);
+            Console.WriteLine(games.Peek());
+            Console.WriteLine(games.Pop());
+            Console.WriteLine(games);
         }
 
         public class Game

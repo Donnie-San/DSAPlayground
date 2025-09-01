@@ -26,7 +26,7 @@ namespace DSAPlayground.CoreDataStructure
                 Resize();
 
             Console.WriteLine(item + " has been pushed");
-            _items[++_top] = item;
+            _items[_top++] = item;
         }
 
         public T Peek()
