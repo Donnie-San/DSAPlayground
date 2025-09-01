@@ -61,6 +61,12 @@ namespace DSAPlayground.CoreDataStructure
             return _head.Value;
         }
 
+        public void Clear()
+        {
+            _head = null;
+            _count = 0;
+        }
+
         public override string ToString()
         {
             var current = _head;

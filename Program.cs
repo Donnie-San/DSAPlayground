@@ -8,66 +8,45 @@ namespace DSAPlayground
     {
         static void Main(string[] args)
         {
-            //int[] numbers = new int[] {
-            //    14, 10, 20, 19, 3, 7, 1, 8
-            //};
-            //SelectionSort.Sort(numbers, descending: true);
-            //foreach (int num in numbers)
-            //    Console.WriteLine(num);
-            //SelectionSort.Sort(numbers);
-            //foreach (int num in numbers)
-            //    Console.WriteLine(num);
-            //Console.WriteLine(LinearSearch.Search(numbers, 10));
-            //Console.WriteLine(LinearSearch.Search(numbers, 2));
+            Console.WriteLine("=== LinkedStack Test ===");
+            var stack = new LinkedStack<string>();
 
-            //string[] words = { "apple", "banana", "cherry" };
-            //SelectionSort.Sort(words, descending: true);
-            //foreach (string word in words)
-            //    Console.WriteLine(word);
-            //SelectionSort.Sort(words);
-            //foreach (string word in words)
-            //    Console.WriteLine(word);
-            //Console.WriteLine(BinarySearch.Search(words, "apple"));
-            //Console.WriteLine(BinarySearch.Search(words, "donnie"));
+            stack.Push("Apple");
+            stack.Push("Banana");
+            stack.Push("Cherry");
 
-            //var games = new ArrayStack<Game>();
-            //games.Push(new Game("GTA V", "Rockstar"));
-            //games.Push(new Game("Metro Exodus", "A4 Games"));
-            //games.Push(new Game("Battlefield 6", "Electronic Arts"));
-            //games.Push(new Game("Red Dead Redemption 2", "Rockstar"));
+            Console.WriteLine("Stack after pushes:");
+            Console.WriteLine(stack);
 
-            //var game = games.Pop();
-            //Console.WriteLine(game.Title + " " + game.Publisher);
-            //game = games.Peek();
-            //Console.WriteLine(game.Title + " " + game.Publisher);
-            //game = games.Pop();
-            //Console.WriteLine(game.Title + " " + game.Publisher);
+            Console.WriteLine("Peek: " + stack.Peek());
+            Console.WriteLine("Pop: " + stack.Pop());
+            Console.WriteLine("Stack after pop:");
+            Console.WriteLine(stack);
 
-            var games = new LinkedStack<Game>();
-            games.Push(new Game("GTA V", "Rockstar"));
-            games.Push(new Game("Metro Exodus", "A4 Games"));
-            games.Push(new Game("Battlefield 6", "Electronic Arts"));
-            games.Push(new Game("Red Dead Redemption 2", "Rockstar"));
-            Console.WriteLine(games.Peek());
-            Console.WriteLine(games.Pop());
-            Console.WriteLine(games);
-        }
+            stack.Clear();
+            Console.WriteLine("Stack after clear:");
+            Console.WriteLine(stack);
+            Console.WriteLine("IsEmpty: " + stack.IsEmpty);
 
-        public class Game
-        {
-            public string Title { get; set; }
-            public string Publisher { get; set; }
+            Console.WriteLine("\n=== LinkedQueue Test ===");
+            var queue = new LinkedQueue<string>();
 
-            public Game(string title, string publisher)
-            {
-                Title = title;
-                Publisher = publisher;
-            }
+            queue.Enqueue("Dog");
+            queue.Enqueue("Elephant");
+            queue.Enqueue("Fox");
 
-            public override string ToString()
-            {
-                return $"{Title}-{Publisher}";
-            }
+            Console.WriteLine("Queue after enqueues:");
+            Console.WriteLine(queue);
+
+            Console.WriteLine("Peek: " + queue.Peek());
+            Console.WriteLine("Dequeue: " + queue.Dequeue());
+            Console.WriteLine("Queue after dequeue:");
+            Console.WriteLine(queue);
+
+            queue.Clear();
+            Console.WriteLine("Queue after clear:");
+            Console.WriteLine(queue);
+            Console.WriteLine("IsEmpty: " + queue.IsEmpty);
         }
     }
 }
